@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+.wrapper {
+	max-width: 1920px;
+	max-height: 1080px;
+}
+.wrapper > div {
+	border : 1px solid rgb(233,171,88);
+} .wrapper {
+	display:grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
+	background-color: #202020;
+}
+
+.top {
+	grid-column: 1/9;
+	grid-row: 1;
+}
+
+.main {
+	grid-column: 2/9;
+	grid-row: 2/9;
+	
+}
+
+.main_contents{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.menu {
+	grid-column: 1;
+	grid-row: 2/9;
+}
+
+.bottom {
+	grid-column: 1/9;
+	grid-row: 9;
+}
+
+h1 {
+		vertical-align: middle;
+		text-align:center;
+		color: #FFFFFF;
+}
+
+h3 {
+		vertical-align: middle;
+		text-align:center;
+		color: #FFFFFF;
+}
+
+</style>
+	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
+	<script type="text/javascript">
+	   //sample code for calling LS2 API
+       var lunaReq= webOS.service.request("luna://com.websocket.sample.myservice",
+        {
+            method:"hello",
+            parameters:{},
+            onSuccess: function (args) {
+				console.log("message:", args.message);
+				document.getElementById("title").innerHTML = args.message;
+            },
+            onFailure: function (args) {
+            }
+        });
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="top">
+			<h1>WebSocket Service for webOS</h1>
+		</div>
+		<div class="menu">
+			<
+		</div>
+		<div class="main">
+			<div class="main_contents">
+				<h1 id="title">Hello World!</h1>
+				<video controls autoplay>
+					<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+				</video>
+			</div>
+		</div>
+		<div class="bottom">
+			<h3>This is a sample that shows how to relay between an web application and an websocket server.</h3>	
+		</div>
+	</div>
+</body>
+</html>

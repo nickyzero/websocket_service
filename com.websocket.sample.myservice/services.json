@@ -1,0 +1,9 @@
+{
+  "id": "com.websocket.sample.myservice",
+  "description": "WebSocket Service",
+  "services": [
+    {
+      "name": "com.websocket.sample.myservice"
+    }
+  ]
+}
