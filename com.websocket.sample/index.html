@@ -58,6 +58,8 @@ h3 {
 </style>
 	<script src="webOSjs-0.1.0/webOS.js" charset="utf-8"></script>
 	<script type="text/javascript">
+
+	function get_greeting(){
 	   //sample code for calling LS2 API
        var lunaReq= webOS.service.request("luna://com.websocket.sample.myservice",
         {
@@ -69,7 +71,8 @@ h3 {
             },
             onFailure: function (args) {
             }
-        });
+		});
+	}
 	</script>
 </head>
 <body>
@@ -78,7 +81,8 @@ h3 {
 			<h1>WebSocket Service for webOS</h1>
 		</div>
 		<div class="menu">
-			<
+			<button onclick="get_greeting()">Get Greeting
+			</button>
 		</div>
 		<div class="main">
 			<div class="main_contents">
